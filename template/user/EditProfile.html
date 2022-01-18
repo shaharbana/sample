@@ -1,0 +1,41 @@
+<html>
+	<body>
+		<form method="post" action="{% url 'EditProfileAction' %}">
+		{% csrf_token %}
+	        	<table>
+				{% for v in data %}
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" value="{{v.name}}"/></td>
+				
+				</tr>
+				<tr>
+					<td>Dob</td>
+					<td><input type="date" name="dob" value="{{v.dob}}"/></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><textarea name="address" rows="10" cols="20"/>{{v.address}}</textarea></td>
+				</tr>
+				
+				<tr>
+					<td>username</td>
+					<td><input type="text" name="username" value="{{v.username}}"/></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Update"/></td>
+				</tr>
+			{% endfor %}
+			</table>
+		</form>
+	</body>
+{% if messages %}
+	{% for msg in messages %}
+		<script>
+			alert('{{msg}}')
+		</script>
+	{% endfor %}
+{% endif %}
+</html>

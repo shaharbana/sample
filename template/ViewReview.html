@@ -1,0 +1,29 @@
+<html>
+<script src="/static/jquery.min.js"></script>
+<script src="/static/jstars.min.js"></script>
+	<body>
+		<table>
+			<tr>
+			<th>Rating</th>
+			<th>Feedback</th>
+			</tr>
+			{% for v in data %}
+				<tr>
+					<td>
+						<div class="jstars"
+								data-value="{{v.rate}}"
+								data-total-stars="5"
+								data-color="#FFFF00"
+								data-empty-color="black"
+								data-size="25px">
+						</div>
+						<input type="text" style="width:30px"  name="rating" id="rating" value="{{v.rate}}" readonly="true"/></td>
+											
+									
+					<td>{{v.feedback}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+
+</html>

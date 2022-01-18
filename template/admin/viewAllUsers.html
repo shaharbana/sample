@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Dob</th>
+				<th>Address</th>
+				<th>Username</th>
+				<th>Status</th>
+			</tr>
+				{% for v in data %}
+			<tr>
+				<td>{{v.name}}</td>
+				<td>{{v.dob}}</td>
+				<td>{{v.address}}</td>
+				<td>{{v.username}}</td>
+				<td>{{v.status}}</td>
+				
+				<td><a href="{% url 'approve' v.id %}">Approve</a></td>	
+				<td><a href="{% url 'reject' v.id %}">Reject</a></td>
+				<td><a href="{% url 'delete' v.id %}">Delete</a></td>
+					
+				
+				
+			</tr>
+				{% endfor %}
+		</table>
+	</body>
+</html>

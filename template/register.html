@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<form method="post" action="{% url 'registerAction' %}">
+		{% csrf_token %}
+	        	<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name"/></td>
+				
+				</tr>
+				<tr>
+					<td>Dob</td>
+					<td><input type="date" name="dob"/></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><textarea name="address" rows="10" cols="20"/></textarea></td>
+				</tr>
+				
+				<tr>
+					<td>username</td>
+					<td><input type="text" name="username"/></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Register"/></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

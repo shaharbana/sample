@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<ul>
+			<li><a href="{% url 'Register' %}">Register</a></li>
+			<li><a href="{% url 'Login' %}">Login</a></li>
+			<li><a href="{% url 'AddReview' %}">Add Review</a></li>
+			<li><a href="{% url 'ViewReview' %}">View Review</a></li>
+			<li><a href="{% url 'html2pdf' %}">html file to pdf</a></li>
+		</ul>
+	</body>
+{% if messages %}
+		{% for msg in messages %}
+			<script>
+				alert('{{msg}}')
+			</script>
+		{% endfor %}
+{% endif %}
+</html>
